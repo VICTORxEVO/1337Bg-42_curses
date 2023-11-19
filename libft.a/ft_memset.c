@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:49:05 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 11:50:04 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/19 15:34:57 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	*ft_memset(void *dest, int c, size_t count)
 {
 	while (count--)
-		*((unsigned char *)(dest + count)) = (unsigned char)c;
+		*((uc *)(dest + count)) = (uc)c;
 	return (dest);
 }
