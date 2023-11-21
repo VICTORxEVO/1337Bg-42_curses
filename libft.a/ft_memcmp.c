@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:48:58 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 15:36:32 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:34:50 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	while ((*(uc *)str1 == *(uc *)str2) && n--)
+	while ((*(const uc *)str1 == *(const uc *)str2) && n--)
 	{
 		str1++;
 		str2++;

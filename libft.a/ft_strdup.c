@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:55:25 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 11:55:26 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:31:11 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ char	*ft_strdup(const char *s)
 	ptr = malloc(sizeof(char) * len);
 	if (!ptr)
 		return (0);
-	return ((char *)ft_memcpy(ptr, s, len));
+	return ((char *)memcpy(ptr, s, len));
 }
