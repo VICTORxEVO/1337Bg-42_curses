@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:28:56 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 13:28:57 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:35:15 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t x;
+	size_t	x;
 
 	x = 0;
 	if (size)

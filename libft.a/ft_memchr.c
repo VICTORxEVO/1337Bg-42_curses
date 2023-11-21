@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:48:55 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 13:29:44 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:47:30 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 {
 	while (n--)
 	{
-		if (*(uc *)str == (uc)c)
+		if (*(t_uc *)str == (t_uc)c)
 			return (str);
 		str++;
 	}

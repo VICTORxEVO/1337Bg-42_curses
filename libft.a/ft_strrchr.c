@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:55:37 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 11:55:38 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:38:10 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int b;
+	int	b;
 
 	b = ft_strlen(str);
 	while (--b >= 0)
@@ -22,4 +22,5 @@ char	*ft_strrchr(const char *str, int c)
 		if (str[b] == (unsigned char)c)
 			return ((char *)&str[b]);
 	}
+	return (NULL);
 }

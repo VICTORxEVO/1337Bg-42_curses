@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:55:29 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 11:55:30 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:41:00 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t s1_len;
-	size_t s2_len;
-	char *new;
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*new;
 
 	if (!s1 || !s2)
 		return (NULL);

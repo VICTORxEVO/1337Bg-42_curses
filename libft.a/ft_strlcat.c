@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:29:05 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 13:29:06 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:31:15 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t src_l;
-	size_t dest_l;
+	size_t	i;
+	size_t	src_l;
+	size_t	dest_l;
 
 	src_l = ft_strlen(src);
 	dest_l = ft_strlen(dest);
