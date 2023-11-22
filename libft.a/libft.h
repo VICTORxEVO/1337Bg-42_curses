@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:56:04 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/22 17:19:41 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:24:28 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ void					ft_putstr_fd(char *s, int fd);
 void					ft_putnbr_fd(int n, int fd);
 void					ft_putendl_fd(char *s, int fd);
 void					ft_putchar_fd(char c, int fd);
-t_list					*ft_lstnew(void *content);
 
 typedef struct s_list
 {
 	void				*content;
 	struct s_list		*next;
 }						t_list;
+
+t_list					*ft_lstnew(void *content);
 
 #endif
