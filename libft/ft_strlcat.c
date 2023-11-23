@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 11:49:02 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 15:45:55 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/21 13:29:05 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2023/11/23 13:56:58 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t count)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	if (dest < src)
-		ft_memcpy(dest, src, count);
-	while (count--)
-		*((t_uc *)(dest + count)) = *((const t_uc *)(src + count));
+	size_t	i;
+	size_t	src_l;
+	size_t	dest_l;
+
+	src_l = ft_strlen(src);
+	dest_l = ft_strlen(dest);
+	i = 0;
+	if (dest_l >= size)
+		return (size + src_l);
+	while (src[i] && dest_l + i < size - 1)
+	{
+		dest[dest_l + i] = src[i];
+		i++;
+	}
+	dest[dest_l + i] = 0;
+	return (dest_l + src_l);
 }

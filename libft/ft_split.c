@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:50:16 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/19 11:50:17 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:54:34 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	**mem_error(char **arr)
 	return (NULL);
 }
 
-static char	*do_word(const char *s, const char x, size_t *q_resume)
+static char	*do_word(const char *s, const char x, int *q_resume)
 {
 	int		len;
 	char	*word;
