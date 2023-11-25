@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:50:16 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/23 13:54:34 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:01:30 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ static int	word_num(const char *s, const char x)
 	wn = 0;
 	while (*s)
 	{
-		while (*s == x)
+		if (*s == x)
 			s++;
-		wn++;
-		while (*s && *s != x)
-			s++;
+		else
+		{
+			wn++;
+			while (*s && *s != x)
+				s++;
+		}
 	}
 	return (wn);
 }
@@ -34,7 +37,10 @@ static char	**mem_error(char **arr)
 
 	r = 0;
 	while (arr[r])
-		free(arr[r++]);
+	{
+		free(arr[r]);
+		r++;
+	}
 	free(arr);
 	return (NULL);
 }
@@ -56,8 +62,12 @@ static char	*do_word(const char *s, const char x, int *q_resume)
 		return (NULL);
 	i = 0;
 	while (s[*q_resume] && s[*q_resume] != x)
-		word[i++] = s[(*q_resume)++];
-	word[*q_resume] = 0;
+	{
+		word[i] = s[*q_resume];
+		(*q_resume)++;
+		i++;
+	}
+	word[i] = '\0';
 	return (word);
 }
 
@@ -76,12 +86,13 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	arr[wn] = 0;
 	q_res = 0;
-	i = -1;
-	while (++i < wn)
+	i = 0;
+	while (i < wn)
 	{
 		arr[i] = do_word(s, c, &q_res);
 		if (!(arr[i]))
 			return (mem_error(arr));
+		i++;
 	}
 	return (arr);
 }

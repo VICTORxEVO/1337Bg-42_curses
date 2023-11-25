@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:49:05 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 15:46:08 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:14:54 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	*ft_memset(void *dest, int c, size_t count)
 {
+	t_uc	*d;
+
+	d = (t_uc *)dest;
 	while (count--)
-		*((t_uc *)(dest + count)) = (t_uc)c;
+	{
+		*d = (t_uc)c;
+		d++;
+	}
 	return (dest);
 }

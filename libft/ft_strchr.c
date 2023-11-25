@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:53:00 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/21 15:38:58 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/25 10:39:56 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strchr(const char *str, int c)
 		if (*str == (char)c)
 			return ((char *)str);
 		str++;
-		if (*str == (char)c)
-			return ((char *)str);
 	}
+	if (*str == (char)c)
+		return ((char *)str);
 	return (0);
 }

@@ -6,13 +6,19 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:38:32 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/23 18:38:52 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:38:41 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    
+	if (!(*lst))
+		return ;
+	while ((*lst) != NULL)
+	{
+		f(*lst->content);
+		*lst = *lst->next;
+	}
 }
