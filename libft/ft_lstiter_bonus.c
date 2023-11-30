@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:38:32 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/25 21:38:41 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:34:28 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!(*lst))
-		return ;
-	while ((*lst) != NULL)
+	while (lst && f)
 	{
-		f(*lst->content);
-		*lst = *lst->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

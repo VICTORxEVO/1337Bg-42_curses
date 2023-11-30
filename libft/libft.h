@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:56:04 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/25 18:19:53 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/26 21:42:27 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstnew(void *content);
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
 
 #endif

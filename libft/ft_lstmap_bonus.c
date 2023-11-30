@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_Itsize_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 18:34:33 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/25 21:35:37 by ysbai-jo         ###   ########.fr       */
+/*   Created: 2023/11/28 11:49:43 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2023/11/30 11:32:09 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int s;
+	t_list	*temp_nod;
+	t_list	*new_lst;
 
-	s = 0;
-	while (lst->next != NULL)
+	if (!lst || !f || !del)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
 	{
-		++s;
+		temp_nod = ft_lstnew(f(lst->content));
+		if (!temp_nod)
+		{
+			ft_lstclear(&new_lst, del);
+			del(temp_nod);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, temp_nod);
 		lst = lst->next;
 	}
-	return (s);
+	return (new_lst);
 }
