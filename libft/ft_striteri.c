@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:28:05 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/11/30 11:26:56 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:04:55 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	y;
 
 	if (!s || !f)
-		return (NULL);
+		return ;
 	y = 0;
 	while (s[y])
 	{
