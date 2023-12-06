@@ -7,25 +7,19 @@ CC = cc
 OBJ = $(SRC:.c=.o)
 B_OBJ = $(B_SRC:.c=.o)
 
-GREEN = \033[32m
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		@echo "almost there......."
-		@sleep 1.4
-		@ar -rcs $@ $^
-		@echo "$(GREEN)<<<<<<<<<<<<<DONE>>>>>>>>>>>>>"
+		ar -rcs $@ $^
 
 %.o : %.c
-		@echo "Compiling.....$<"
-		@sleep 0.013
-		@$(CC) $(FLG) -c $^ $<
+		$(CC) -c $(FLG) $<
 
 bonus : $(B_OBJ)
 
 $(B_OBJ) : $(B_SRC)
-		$(CC) $(FLG) -c $^
+		$(CC) -c $(FLG) $(B_SRC)
 		ar -rcs $(NAME) $(B_OBJ)
 
 clean :
