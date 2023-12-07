@@ -11,16 +11,12 @@ B_OBJ = $(B_SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		ar -rcs $@ $^
-
-%.o : %.c
-		$(CC) -c $(FLG) $<
-
+		
 bonus : $(B_OBJ)
 
-$(B_OBJ) : $(B_SRC)
-		$(CC) -c $(FLG) $(B_SRC)
-		ar -rcs $(NAME) $(B_OBJ)
+%.o : %.c
+		$(CC) -c $(FLG) $< -o $@
+		ar -rcs $(NAME) $@
 
 clean :
 		rm -f $(OBJ) $(B_OBJ) 
