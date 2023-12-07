@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Func_II                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/06 11:54:39 by ysbai-jo          #+#    #+#             */
+/*   Updated: 2023/12/06 16:32:10 by ysbai-jo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "pf.h"
+
+void    ft_putnbr_hec(unsigned int nb, char type, int *len)
+{
+    if (nb == 0)
+        ft_putchar('0', len);
+    else
+        if (type == 'X')
+            ft_handle(nb, "0123456789ABCDEF", len);
+        else
+            ft_handle(nb, "0123456789abcdef", len);
+}
+
+void    ft_putadrr(void *f, int *len)
+{
+    unsigned long long int fpro;
+
+    fpro = (unsigned long long int )f;
+    t_putstr("0x", len);
+    if (fpro == 0)
+        ft_putchar('0', len);
+    else
+        ft_handle(fpro, "0123456789abcdef", len);
+}
+
+ft_handle(unsigned long long int nbr, char *base, int *len)
+{
+    if (nbr > 0)
+}
