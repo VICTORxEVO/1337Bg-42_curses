@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 11:55:33 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/12/06 17:16:58 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:55:30 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	q = 0;
 	while (q < len && big[q])
 	{
-		if (len - q >= l_len
-			&& !(ft_strncmp(&big[q], little, l_len)))
+		if (len - q >= l_len && !(ft_strncmp(&big[q], little, l_len)))
 			return ((char *)&big[q]);
 		++q;
 	}
 	return (NULL);
-}
-#include <stdio.h>
-#include <strings.h>
-int main (void)
-{
-	printf ("%s\n",ft_strnstr(NULL, "HEllo", 0));
-	//printf ("%d",strnstr(NULL, "HEllo", 0));
-
 }
