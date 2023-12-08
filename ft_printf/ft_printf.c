@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 10:34:32 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/12/06 16:15:37 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:15:45 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void check_frmt(const char c, va_list arg, int *len)
     else if (c == 'u')
         ft_putnbrv2(va_arg(arg, unsigned int), len)
     else if (c == 'c')
-        
+        ft_putchar((char )va_arg(arg, int), len);
     else if (c == 's')
 
     else if (c == 'p')
@@ -29,7 +29,7 @@ static void check_frmt(const char c, va_list arg, int *len)
     else if (c == 'x')
         ft_putnbr_hec(va_arg(arg, unsigned int), c, len);
     else if (c == '%')
-        ft_putchar(c, len);
+        ft_putchar((char )va_arg(arg, int), len);
 }
 
 int ft_printf(const char *s, ...)
@@ -47,7 +47,8 @@ int ft_printf(const char *s, ...)
             check_frmt(*s, arg, &len);
         }
         else
-            ft_putchar(*s, &len)
+            ft_putchar(*s, &len);
+        s++;
     }
     va_end(arg);
     return (len);
