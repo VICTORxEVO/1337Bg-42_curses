@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:24:36 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/12/16 16:29:37 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:14:36 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2, int rd)
 	if (!rd)
 		return ((char *)s1);
 	if (!s1)
-	{
 		return (ft_substr(s2, 0, rd));
-	}
 	s1_len = ft_strlen(s1);
 	new = malloc(sizeof(char) * (s1_len + rd + 1));
 	if (!new)
