@@ -1,8 +1,8 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char    *get_next_line(int fd)
 {
-    static char *q_res;
+    static char *q_res[1024];
     char        buff[BUFFER_SIZE];
     int         nl_ind;
     ssize_t     rd;
@@ -10,18 +10,18 @@ char    *get_next_line(int fd)
     rd = read(fd, buff, BUFFER_SIZE);
     while (rd >= 0)
     {
-        q_res = ft_strjoin(q_res, buff, rd);
-        nl_ind = check_nl(q_res);
+        q_res[fd] = ft_strjoin(q_res[fd], buff, rd);
+        nl_ind = check_nl(q_res[fd]);
         if(nl_ind != -1947)
-            return (handle_it(&q_res, nl_ind + 1));
-        if (!q_res || (!rd && !(*q_res)))
+            return (handle_it(&q_res[fd], nl_ind + 1));
+        if (!q_res[fd] || (!rd && !(*q_res[fd])))
             break;
         if (!rd)
-            return (get_other_line(&q_res));
+            return (get_other_line(&q_res[fd]));
         rd = read(fd, buff, BUFFER_SIZE);
     }
-    free(q_res);
-    q_res = NULL;
+    free(q_res[fd]);
+    q_res[fd] = NULL;
     return (NULL);
 }
 char    *handle_it(char **buff,int nl_ind)
@@ -61,17 +61,21 @@ int check_nl(char *str)
     return (-1947);
 }
 
-
-
 // int main(void)
 // {
 //     int i = -1;
+//     int fdf = open("falco.txt", O_RDONLY);
+//     int fde = open("eren.txt", O_RDONLY);
 //     int fda = open("armin.txt", O_RDONLY);
-
+//     printf("\n\n\n");
 //     while(++i != 3)
 //     {
-//         printf("armin line number %d->%s", get_next_line(fda), i);
+//         printf("falco line number %d->%s", i, get_next_line(fdf));
+//         printf("eren line number %d->%s", i, get_next_line(fde));
+//         printf("armin line number %d->%s", i, get_next_line(fda));
 //     }
+//     close(fdf);
+//     close(fde);
 //     close(fda);
 
 //     return 0;
