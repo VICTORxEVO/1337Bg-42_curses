@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:25:35 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/12/16 21:00:47 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/12/17 12:01:18 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*get_next_line(int fd)
 	ssize_t		rd;
 
 	buff = malloc(BUFFER_SIZE);
-	if (!buff)
-		return (blue_screen(&q_res[fd], &buff));
+	if (!buff || BUFFER_SIZE <= 0)
+		return (free_all(&q_res[fd], &buff));
 	rd = read(fd, buff, BUFFER_SIZE);
 	while (rd >= 0)
 	{
@@ -32,10 +32,10 @@ char	*get_next_line(int fd)
 		if (!q_res[fd] || (!rd && !(*q_res[fd])))
 			break ;
 		if (!rd)
-			return (get_other_line(&q_res[fd], &buff));
+			return (get_last_line(&q_res[fd], &buff));
 		rd = read(fd, buff, BUFFER_SIZE);
 	}
-	return (blue_screen(&q_res[fd], &buff));
+	return (free_all(&q_res[fd], &buff));
 }
 
 char	*handle_it(char **buff, int nl_ind, char **container)
@@ -51,16 +51,14 @@ char	*handle_it(char **buff, int nl_ind, char **container)
 	return (line);
 }
 
-char	*get_other_line(char **buff, char **container)
+char	*get_last_line(char **buff, char **container)
 {
 	char	*line;
-	char	*tmp;
 
 	free(*container);
 	line = ft_substr(*buff, 0, ft_strlen(*buff));
-	tmp = ft_substr(*buff, 0, 0);
 	free(*buff);
-	*buff = tmp;
+	*buff = NULL;
 	return (line);
 }
 
@@ -78,7 +76,7 @@ int	check_nl(char *str)
 	return (-1947);
 }
 
-void	*blue_screen(char **q_res, char **container)
+void	*free_all(char **q_res, char **container)
 {
 	free(*container);
 	free(*q_res);
