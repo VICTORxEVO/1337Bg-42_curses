@@ -6,7 +6,7 @@
 /*   By: ysbai-jo <ysbai-jo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:24:57 by ysbai-jo          #+#    #+#             */
-/*   Updated: 2023/12/17 11:53:44 by ysbai-jo         ###   ########.fr       */
+/*   Updated: 2023/12/17 12:15:18 by ysbai-jo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef unsigned char	t_uc;
 # endif
 
 char			*handle_it(char **buff, int nl_ind, char **container);
-char            *get_next_line(int fd);
+char			*get_next_line(int fd);
 char			*get_last_line(char **buff, char **container);
 int				check_nl(char *str);
 char			*ft_strjoin(char const *s1, char const *s2, int rd);
